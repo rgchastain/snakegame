@@ -1,3 +1,5 @@
+//This code was done via tutorial.
+
 $(document).ready(function(){
 	//Canvas stuff
 	var canvas = $("#canvas")[0];
@@ -5,24 +7,24 @@ $(document).ready(function(){
 	var w = $("#canvas").width();
 	var h = $("#canvas").height();
 	
-	//Lets save the cell width in a variable for easy control
+	//Saves the cell width in a variable for easy control
 	var cw = 10;
 	var d;
 	var food;
 	var score;
 	
-	//Lets create the snake now
+	//Create the snake
 	var snake_array; //an array of cells to make up the snake
 	
 	function init()
 	{
 		d = "right"; //default direction
 		create_snake();
-		create_food(); //Now we can see the food particle
-		//finally lets display the score
+		create_food(); //Food particle
+		//Display score
 		score = 0;
 		
-		//Lets move the snake now using a timer which will trigger the paint function
+		// move the snake using a timer which will trigger the paint function
 		//every 60ms
 		if(typeof game_loop != "undefined") clearInterval(game_loop);
 		game_loop = setInterval(paint, 90);
@@ -40,7 +42,7 @@ $(document).ready(function(){
 		}
 	}
 	
-	//Lets create the food now
+	//Creating the food
 	function create_food()
 	{
 		food = {
@@ -51,7 +53,7 @@ $(document).ready(function(){
 		//Because there are 45(450/10) positions accross the rows and columns
 	}
 	
-	//Lets paint the snake now
+	//Paints the snake
 	function paint()
 	{
 		//To avoid the snake trail we need to paint the BG on every frame
